@@ -4,11 +4,16 @@ const images = [
     "2.jpg"
 ];
 
-const choseImage = images[Math.floor(Math.random()*images.length)];
+const body = document.querySelector("body");
 
-const bgImage = document.createElement("img");
+function IMGselect(){
+    const image = new Image();
+    choseImage = images[Math.floor(Math.random()*images.length)];
+    image.src = `img/${choseImage}`
+    image.className = 'bgIMG';
+    body.prepend(image);
+}
 
-bgImage.src = `img/${choseImage}`;
+IMGselect();
 
-document.body.appendChild(bgImage);
 
